@@ -1,0 +1,1025 @@
+{
+	"info": {
+		"_postman_id": "01800218-6df7-4285-84f3-5766957ad5ed",
+		"name": "UX-Test-Hub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40111124"
+	},
+	"item": [
+		{
+			"name": "Prototypes",
+			"item": [
+				{
+					"name": "POST User login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"rahmouni@example.com\",\r\n  \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/v1/sessions"
+					},
+					"response": []
+				},
+				{
+					"name": "POST creat prototypes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Prototipo de prueba UX\",\r\n  \"description\": \"Evaluación de usabilidad para una app móvil.\",\r\n  \"figmaUrl\": \"https://www.figma.com/proto/xyz1234\",\r\n  \"startDate\": \"2025-03-01T10:00:00.000Z\",\r\n  \"endDate\": \"2025-03-02T10:00:00.000Z\",\r\n  \"address\": {\r\n    \"city\": \"Madrid\",\r\n    \"street\": \"Gran Vía 10\",\r\n    \"location\": {\r\n      \"lat\": 40.416775,\r\n      \"lng\": -3.703790\r\n    }\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/v1/prototypes"
+					},
+					"response": []
+				},
+				{
+					"name": "GET prototype ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:5000/api/v1/prototypes/67be3997253ad37db359a93f"
+					},
+					"response": []
+				},
+				{
+					"name": "Update prototype",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Prototipo actualizado UX\",\r\n  \"description\": \"Nueva descripción con mejoras en UX\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/v1/prototypes/67be3997253ad37db359a93f"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE prototype ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:5000/api/v1/prototypes/67be3997253ad37db359a93f"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Upload avatar image",
+			"item": [
+				{
+					"name": "users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/Chahinaz/Ironhack/module3/ux-test-hub/api/images.png"
+								},
+								{
+									"key": "name",
+									"value": "Test user",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "user@example.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sessions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"user@example.com\",\r\n  \"password\": \"12345678\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/v1/sessions"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:5000/api/v1/users/me"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments Prototype",
+			"item": [
+				{
+					"name": "Creat comments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"text\": \"Este es un comentario de prueba\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/v1/prototypes/67be20f33b74e0fa3f071927/comments"
+					},
+					"response": []
+				},
+				{
+					"name": "Get comments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:5000/api/v1/prototypes/67be20f33b74e0fa3f071927/comments/67c0b340bdef62bdb2c7546c"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete comments",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:5000/api/v1/prototypes/67be20f33b74e0fa3f071927/comments/67c0b340bdef62bdb2c7546c"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EMAIL",
+			"item": [
+				{
+					"name": "Sending welcome email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/Chahinaz/Ironhack/module3/ux-test-hub/api/images.png"
+								},
+								{
+									"key": "name",
+									"value": "Test user2",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "user2@email.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:5000/api/v1/users"
+					},
+					"response": []
+				},
+				{
+					"name": "session",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"chahinaz@example.com\",\r\n  \"password\": \"12345678\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/v1/sessions"
+					},
+					"response": []
+				},
+				{
+					"name": "authentication",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/v1/users/me"
+					},
+					"response": []
+				},
+				{
+					"name": "publication prototype",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Prueba de Prototipo\",\r\n  \"description\": \"Este es un prototipo de prueba.\",\r\n  \"startDate\": \"2025-03-04\",\r\n  \"endDate\": \"2025-04-01\",\r\n  \"address\": {\r\n    \"street\": \"123 UX Avenue\",\r\n    \"city\": \"Madrid\",\r\n    \"location\": {\r\n      \"lat\": 40.4168,\r\n      \"lng\": -3.7038\r\n    }\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/v1/prototypes"
+					},
+					"response": []
+				},
+				{
+					"name": "get prototypes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/v1/prototypes"
+					},
+					"response": []
+				},
+				{
+					"name": "delete prototype",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:5000/api/v1/prototypes/67c6121d5fd2a66ab5c6bc76"
+					},
+					"response": []
+				},
+				{
+					"name": "Comments notifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/v1/prototypes"
+					},
+					"response": []
+				},
+				{
+					"name": "comments notifications",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"text\": \"¡Me encanta este prototipo! Muy bien hecho.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/v1/prototypes/67c611195fd2a66ab5c6bc70/comments"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Google Maps API",
+			"item": [
+				{
+					"name": "Geocoding API-adress to coordinates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/geocode/json?address=Granollers,Barcelona&key=AIzaSyCwBoeNQNw97FB6WxKGwyBwMhHUB-5YUWo",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"geocode",
+								"json"
+							],
+							"query": [
+								{
+									"key": "address",
+									"value": "Granollers,Barcelona"
+								},
+								{
+									"key": "key",
+									"value": "AIzaSyCwBoeNQNw97FB6WxKGwyBwMhHUB-5YUWo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Geocoding API-coordinates to adress",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/geocode/json?latlng=41.608,2.287&key=AIzaSyCwBoeNQNw97FB6WxKGwyBwMhHUB-5YUWo",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"geocode",
+								"json"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "41.608,2.287"
+								},
+								{
+									"key": "key",
+									"value": "AIzaSyCwBoeNQNw97FB6WxKGwyBwMhHUB-5YUWo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Places API-Find nearby places",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.608,2.287&radius=500&key=AIzaSyCwBoeNQNw97FB6WxKGwyBwMhHUB-5YUWo",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"place",
+								"nearbysearch",
+								"json"
+							],
+							"query": [
+								{
+									"key": "location",
+									"value": "41.608,2.287"
+								},
+								{
+									"key": "radius",
+									"value": "500"
+								},
+								{
+									"key": "key",
+									"value": "AIzaSyCwBoeNQNw97FB6WxKGwyBwMhHUB-5YUWo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Directions API-Get routes between two points",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/directions/json?origin=41.608,2.287&destination=41.3851,2.1734&key=AIzaSyCwBoeNQNw97FB6WxKGwyBwMhHUB-5YUWo",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"directions",
+								"json"
+							],
+							"query": [
+								{
+									"key": "origin",
+									"value": "41.608,2.287"
+								},
+								{
+									"key": "destination",
+									"value": "41.3851,2.1734"
+								},
+								{
+									"key": "key",
+									"value": "AIzaSyCwBoeNQNw97FB6WxKGwyBwMhHUB-5YUWo"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stats",
+			"item": [
+				{
+					"name": "Most commented prototypes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/v1/stats/prototypes"
+					},
+					"response": []
+				},
+				{
+					"name": "Most active users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/v1/stats/users"
+					},
+					"response": []
+				},
+				{
+					"name": "General stats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/v1/stats/general"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Filters",
+			"item": [
+				{
+					"name": "Search by title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/prototypes?title=Figma",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"prototypes"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "Figma"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter by user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/prototypes?userId=67c611cc5fd2a66ab5c6bc73",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"prototypes"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "67c611cc5fd2a66ab5c6bc73"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter by date",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/prototypes?startDate=2024-01-01&endDate=2024-12-31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"prototypes"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2024-01-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-12-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sort by comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/prototypes?sort=comments\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"prototypes"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "comments\n"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Prototypes feedback",
+			"item": [
+				{
+					"name": "creat user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Chahinazexample\",\r\n  \"email\": \"chahinazexample@example.com\",\r\n  \"password\": \"12345678\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/v1/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Get session",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"chahinazexample@example.com\",\r\n  \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/v1/sessions"
+					},
+					"response": []
+				},
+				{
+					"name": "Creat prototype",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Prototipo UX\",\r\n  \"description\": \"Este es un prototipo de prueba.\",\r\n  \"startDate\": \"2025-04-01T10:00:00.000Z\",\r\n  \"endDate\": \"2025-05-01T10:00:00.000Z\",\r\n  \"address\": {\r\n    \"city\": \"Madrid\",\r\n    \"street\": \"123 UX Avenue\",\r\n    \"location\": {\r\n      \"lat\": 40.4168,\r\n      \"lng\": -3.7038\r\n    }\r\n  },\r\n  \"categories\": [\"UI/UX\", \"Prototyping\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/v1/prototypes"
+					},
+					"response": []
+				},
+				{
+					"name": "prototype ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/v1/prototypes"
+					},
+					"response": []
+				},
+				{
+					"name": "Approve a prototype",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"approved\",\r\n  \"feedback\": \"Muy buen diseño, solo ajustar la tipografía.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/v1/prototypes/67c641d9511b4e3c6f65d40e/review"
+					},
+					"response": []
+				},
+				{
+					"name": "Rejecting a prototype",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"rejected\",\r\n  \"feedback\": \"Falta contraste en los colores, revisa accesibilidad.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/v1/prototypes/67c641d9511b4e3c6f65d40e/review"
+					},
+					"response": []
+				},
+				{
+					"name": "Creating prototype comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"text\": \"Me encanta el diseño, pero creo que podría mejorar la accesibilidad.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/v1/prototypes/67c641d9511b4e3c6f65d40e/comments"
+					},
+					"response": []
+				},
+				{
+					"name": "List prototype comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/v1/prototypes/67c641d9511b4e3c6f65d40e"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"rahmouni\",\r\n  \"email\": \"rahmouni@example.com\",\r\n  \"password\": \"12345678\",\r\n  \"role\": \"admin\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/v1/users"
+			},
+			"response": []
+		},
+		{
+			"name": "get users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/api/v1/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"rahmouni@example.com\",\r\n  \"password\": \"12345678\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/v1/sessions"
+			},
+			"response": []
+		},
+		{
+			"name": "users/me",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "connect.sid=s%3ANGDWyyllfKS9N49KrHEDBS8IyTORGGMK.h%2BykzumKxT38QbmCG7NI%2Bhhoxxsz%2BeUuFJy5JQSTrWs; Path=/; HttpOnly; Expires=Sun, 09 Mar 2025 14:31:39 GMT;",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": "http://localhost:5000/api/v1/users/me"
+			},
+			"response": []
+		},
+		{
+			"name": "Create prototype",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Prototipo de prueba\",\r\n  \"description\": \"Evaluación UX para una app móvil.\",\r\n  \"figmaUrl\": \"https://www.figma.com/proto/xyz1234\",\r\n  \"startDate\": \"2025-03-01T10:00:00.000Z\",\r\n  \"endDate\": \"2025-03-10T18:00:00.000Z\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/prototypes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"prototypes"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer TU_TOKEN_AQUÍ",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:5000/api/v1/prototypes"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile by ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer TU_TOKEN_AQUÍ",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:5000/api/v1/prototypes/67be14ed41c57f04dcfa4214"
+			},
+			"response": []
+		},
+		{
+			"name": "Logout User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:5000/api/v1/sessions"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete prototypes ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:5000/api/v1/sessions"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete sessions",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:5000/api/v1/sessions"
+			},
+			"response": []
+		}
+	]
+}

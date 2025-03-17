@@ -1,0 +1,111 @@
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(13, 10, 253, 0.2);
+  }
+
+  .testimonial-carousel {
+    background-color: #1167ED; 
+    color: rgb(2, 1, 1); 
+    
+  }
+
+  .how-it-works-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .how-it-works-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .testimonial-carousel .carousel-control-prev,
+  .testimonial-carousel .carousel-control-next {
+    color: rgb(252, 252, 252);
+  }
+  
+  .testimonial-carousel .carousel-control-prev:hover,
+  .testimonial-carousel .carousel-control-next:hover {
+    background-color: rgb(34, 160, 237); 
+  }
+  
+  .testimonial-carousel .carousel-caption {
+    padding: 15px;
+    position: absolute;
+    bottom: 20px; 
+    width: 100%;
+    text-align: center;
+  }
+  
+  .testimonial-carousel .carousel-item {
+    padding: 30px 0;
+  }
+  
+  .testimonial-carousel p.lead {
+    font-size: 1.2rem;
+    font-style: italic;
+  }
+  
+  .testimonial-carousel .fw-bold {
+    font-size: 1.1rem;
+    margin-top: 15px;
+  }
+  
+html, body {
+  height: 100%; 
+  margin: 0; 
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%; 
+
+main {
+  flex: 1; 
+}
+
+footer {
+  margin-top: auto; 
+}
+
+iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+}
+
+.circle-outer {
+  width: 20px;      
+  height: 20px;
+  border-radius: 50%;
+  background-color: #007bff; 
+  position: relative;
+}
+
+.circle-inner {
+  width: 8px;       
+  height: 8px;
+  border-radius: 50%;
+  background-color: #052c74; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.capture-card {
+  border: 1px solid rgba(13, 110, 253, 0.2); 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.capture-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-color: rgba(13, 110, 253, 0.4);  
+}
+}

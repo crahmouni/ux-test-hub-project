@@ -1,0 +1,11 @@
+{
+    "_id": {
+      "$oid": "67be14ed41c57f04dcfa4214"
+    },
+    "name": "Prototipo de Prueba",
+    "description": "Evaluación de UX para una app móvil.",
+    "figmaUrl": "https://www.figma.com/proto/xyz1234",
+    "createdAt": {
+      "$date": "2025-02-25T19:07:25.166Z"
+    }
+  }
